@@ -94,7 +94,7 @@ public class RestClient {
         return api().getAll(url,key);
     }
 
-    public Observable<CategoryBean> getCategory(String cid, String name, String page) {
-        return api().getCategory(Constants.URL_CATEGORY,Constants.SMSSDK_KEY,cid,page,"20");
+    public Observable<CategoryBean> getCategory(String cid, String name, int page) {
+        return api().getCategory(Constants.URL_CATEGORY,Constants.SMSSDK_KEY,cid,String.valueOf(page),"20");
     }
 }

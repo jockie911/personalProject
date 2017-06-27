@@ -9,6 +9,8 @@ import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -23,7 +25,9 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.jude.swipbackhelper.SwipeBackHelper;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 import butterknife.ButterKnife;
 import jockie.site.personalproject.R;
@@ -129,9 +133,6 @@ public abstract class BaseActivity extends AppCompatActivity implements OnClickL
 
 	@RequiresApi(api = Build.VERSION_CODES.CUPCAKE)
 	protected void setStatusBar() {
-//		getWindow().setFlags(
-//				WindowManager.LayoutParams.FLAG_FULLSCREEN,
-//				WindowManager.LayoutParams.FLAG_FULLSCREEN);
 		getWindow().setSoftInputMode( WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
 		if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
 			Window window = getWindow();
@@ -176,4 +177,32 @@ public abstract class BaseActivity extends AppCompatActivity implements OnClickL
 	}
 
 	protected abstract BasePresenter initPresenter() ;
+
+	protected int currentSelectedPosition = 0;
+	protected int beforeSelectedPosition = -1;
+	/**
+	 * 对于有fragment切换的  hide和show
+	 */
+	protected void dealWithFragment() {
+		FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+		if (currentSelectedPosition == beforeSelectedPosition) {
+			return;
+		}
+		Fragment baseFragment = getFragment().get(currentSelectedPosition);
+		if (baseFragment.isAdded()) {
+			transaction.show(baseFragment);
+		} else {
+			transaction.add(R.id.content_container, baseFragment);
+		}
+		if (beforeSelectedPosition != -1) {
+			transaction.hide(getFragment().get(beforeSelectedPosition));
+		}
+		transaction.commit();
+	}
+
+	protected List<Fragment> mFragment = new ArrayList<>();
+	protected List<Fragment> getFragment(){
+		return mFragment;
+	}
+
 }

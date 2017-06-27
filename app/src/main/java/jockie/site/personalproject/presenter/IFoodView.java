@@ -14,6 +14,9 @@ public interface IFoodView extends IBaseView{
 
     void setItemData(CategoryBean.ResultBean result);
 
-    void requestItemData(String cid,String name,String page);
+    void requestItemData(String cid,String name,int page);
 
+    String getCurrentCid(String cid);
+
+    String getCurrentName(String name);
 }

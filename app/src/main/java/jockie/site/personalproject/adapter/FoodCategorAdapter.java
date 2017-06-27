@@ -4,11 +4,16 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import jockie.site.personalproject.R;
+import jockie.site.personalproject.Utils.GlideUtils;
+import jockie.site.personalproject.base.BaseApp;
 import jockie.site.personalproject.bean.ALlBean;
 import jockie.site.personalproject.bean.CategoryBean;
 
@@ -23,7 +28,7 @@ public class FoodCategorAdapter extends RecyclerView.Adapter<FoodCategorAdapter.
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(android.R.layout.test_list_item, null);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_food_adapter, null);
         view.setOnClickListener(this);
         return new ViewHolder(view);
     }
@@ -31,7 +36,8 @@ public class FoodCategorAdapter extends RecyclerView.Adapter<FoodCategorAdapter.
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.itemTv.setText(mData.get(position).getName());
-        holder.itemTv.setTag(position);
+        GlideUtils.load(BaseApp.getContext(),mData.get(position).getThumbnail(),holder.itemIvPic);
+        holder.itemRootView.setTag(position);
     }
 
     @Override
@@ -54,16 +60,20 @@ public class FoodCategorAdapter extends RecyclerView.Adapter<FoodCategorAdapter.
 
     @Override
     public void onClick(View v) {
-        mOnItemClickListener.onItemClickListener(v,(int)v.getTag());
+        mOnItemClickListener.onItemClickListener(v,(int)v.findViewById(R.id.item_fm_root_view).getTag());
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         private TextView itemTv;
+        private ImageView itemIvPic;
+        private FrameLayout itemRootView;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            itemTv = (TextView) itemView.findViewById(android.R.id.text1);
+            itemTv = (TextView) itemView.findViewById(R.id.item_tv_title);
+            itemIvPic = (ImageView) itemView.findViewById(R.id.item_iv_pic);
+            itemRootView = (FrameLayout) itemView.findViewById(R.id.item_fm_root_view);
         }
     }
 

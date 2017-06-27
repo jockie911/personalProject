@@ -1,0 +1,43 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/divideColor"
+    tools:context="jockie.site.personalproject.fragment.SettingFragment">
+
+    <TextView
+        android:id="@+id/tv_food"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/bg_color"
+        android:textSize="16sp"
+        android:textColor="@color/textColor"
+        android:text="美食中心"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"/>
+    <TextView
+        android:id="@+id/tv_erwei_code"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/bg_color"
+        android:textSize="16sp"
+        android:textColor="@color/textColor"
+        android:text="二维码"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:layout_marginTop="1dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/bg_color"
+        android:textSize="16sp"
+        android:textColor="@color/textColor"
+        android:text="设置"
+        android:gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:layout_marginTop="10dp"/>
+
+
+</LinearLayout>

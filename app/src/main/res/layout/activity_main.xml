@@ -9,9 +9,82 @@
 
     <include layout="@layout/base_title_bar"/>
 
-    <Button
-        android:id="@+id/btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="jump"/>
+    <FrameLayout
+        android:id="@+id/content_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:id="@+id/fl_msg"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/tv_msg"
+                style="@style/tv_main_bottom"
+                android:text="随心约" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_online"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/tv_online"
+                style="@style/tv_main_bottom"
+                android:text="在线"
+                 />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_index"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/tv_index"
+                style="@style/tv_main_bottom"
+                android:textColor="@color/textColor"
+                android:text="约玩" />
+        </FrameLayout>
+
+
+        <FrameLayout
+            android:id="@+id/fl_activi"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <TextView
+                android:id="@+id/tv_activi"
+                style="@style/tv_main_bottom"
+                android:text="动态"
+                 />
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/fl_info"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+                <TextView
+                    android:id="@+id/tv_info"
+                    style="@style/tv_main_bottom"
+                    android:text="我"
+                    android:layout_centerInParent="true"
+                    />
+            </RelativeLayout>
+        </FrameLayout>
+
+    </LinearLayout>
 </LinearLayout>
