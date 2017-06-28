@@ -4,7 +4,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Toast;
 
-import java.sql.Date;
 import java.util.Calendar;
 
 import butterknife.Bind;
@@ -17,13 +16,13 @@ import jockie.site.personalproject.base.BaseFragment;
  * Created by yc on 2017/6/26.
  */
 
-public class DateFragment extends BaseFragment {
+public class EFragment extends BaseFragment {
 
     @Bind(R.id.datepicker)
     DatePicker datepicker;
     @Override
     protected View inflater(LayoutInflater inflater) {
-        return inflater.inflate(R.layout.fragment_date,null);
+        return inflater.inflate(R.layout.fragment_e,null);
     }
 
     @Override

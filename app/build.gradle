@@ -27,6 +27,8 @@ dependencies {
     })
 
     /*retrofit*/
+
+
     compile 'com.android.support:appcompat-v7:25.3.1'
     compile 'com.android.support:design:25.3.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
@@ -41,9 +43,8 @@ dependencies {
     compile 'com.github.bumptech.glide:glide:4.0.0-RC0'
     compile 'com.android.support:support-v4:25.3.1'
     compile 'com.jude:swipebackhelper:3.1.2'
+    compile 'cn.aigestudio.datepicker:DatePicker:2.2.0'
+    compile 'com.xiaosu:pullLayout:3.0.4'
     testCompile 'junit:junit:4.12'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.0.0-RC0'
-    compile 'cn.aigestudio.datepicker:DatePicker:2.2.0'
-
-    compile 'com.xiaosu:pullLayout:3.0.4'
 }

@@ -1,4 +1,4 @@
-package jockie.site.personalproject;
+package jockie.site.personalproject.module;
 
 import android.util.Log;
 import android.view.View;
@@ -13,6 +13,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import butterknife.Bind;
+import jockie.site.personalproject.R;
 import jockie.site.personalproject.Utils.GlideUtils;
 import jockie.site.personalproject.base.BaseActivity;
 import jockie.site.personalproject.base.BasePresenter;

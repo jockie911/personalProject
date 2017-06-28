@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:fitsSystemWindows="true"
     android:background="@color/bg_color"
-    tools:context="jockie.site.personalproject.FoodActivity">
+    tools:context="jockie.site.personalproject.module.FoodActivity">
 
     <include layout="@layout/base_title_bar"/>
 

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.uuzuche.lib_zxing.activity.CaptureActivity;
@@ -11,20 +12,19 @@ import com.uuzuche.lib_zxing.activity.CodeUtils;
 
 import butterknife.Bind;
 import butterknife.OnClick;
-import jockie.site.personalproject.FoodActivity;
+import jockie.site.personalproject.module.DreamActivity;
+import jockie.site.personalproject.module.FoodActivity;
 import jockie.site.personalproject.R;
 import jockie.site.personalproject.base.BaseApp;
 import jockie.site.personalproject.base.BaseFragment;
-
-import static android.R.attr.onClick;
-import static android.R.attr.switchMinWidth;
+import jockie.site.personalproject.module.OilActivity;
 
 
-public class SettingFragment extends BaseFragment {
+public class YFragment extends BaseFragment {
 
     @Override
     protected View inflater(LayoutInflater inflater) {
-        return inflater.inflate(R.layout.fragment_setting, null);
+        return inflater.inflate(R.layout.fragment_y, null);
     }
 
     @Override
@@ -32,7 +32,7 @@ public class SettingFragment extends BaseFragment {
 
     }
 
-    @OnClick({R.id.tv_food,R.id.tv_erwei_code})
+    @OnClick({R.id.tv_food,R.id.tv_erwei_code,R.id.tv_sleep,R.id.tv_oil})
     public void onClick(View view){
         if(isDoubleClick(view)) return;
         switch (view.getId()){
@@ -42,6 +42,12 @@ public class SettingFragment extends BaseFragment {
             case R.id.tv_erwei_code:
                 Intent intent = new Intent(getActivity(), CaptureActivity.class);
                 startActivityForResult(intent, 100);
+                break;
+            case R.id.tv_sleep:
+                startActivity(new Intent(getActivity(),DreamActivity.class));
+                break;
+            case R.id.tv_oil:
+                startActivity(new Intent(getActivity(),OilActivity.class));
                 break;
         }
     }

@@ -6,6 +6,8 @@ import java.util.concurrent.TimeUnit;
 
 import jockie.site.personalproject.bean.ALlBean;
 import jockie.site.personalproject.bean.CategoryBean;
+import jockie.site.personalproject.bean.DreamBean;
+import jockie.site.personalproject.bean.OilBean;
 import jockie.site.personalproject.istatic.Constants;
 import jockie.site.personalproject.net.api.Api;
 import okhttp3.Interceptor;
@@ -96,5 +98,13 @@ public class RestClient {
 
     public Observable<CategoryBean> getCategory(String cid, String name, int page) {
         return api().getCategory(Constants.URL_CATEGORY,Constants.SMSSDK_KEY,cid,String.valueOf(page),"20");
+    }
+
+    public Observable<DreamBean> getDreamDetail(String name){
+        return api().getDreamDetail("http://apicloud.mob.com/appstore/dream/search",Constants.SMSSDK_KEY,name);
+    }
+
+    public Observable<OilBean> getOil() {
+        return api().getOil("http://apicloud.mob.com/oil/price/province/query",Constants.SMSSDK_KEY);
     }
 }

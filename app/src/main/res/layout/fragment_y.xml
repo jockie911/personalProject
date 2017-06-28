@@ -1,0 +1,33 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/divideColor"
+    tools:context="jockie.site.personalproject.fragment.YFragment">
+
+    <TextView
+        android:id="@+id/tv_food"
+        style="@style/tv_ifragment"
+        android:text="美食中心"/>
+    <TextView
+        android:id="@+id/tv_sleep"
+        style="@style/tv_ifragment"
+        android:text="周公解梦"
+        android:layout_marginTop="1dp"/>
+    <TextView
+        android:id="@+id/tv_erwei_code"
+        style="@style/tv_ifragment"
+        android:text="二维码"
+        android:layout_marginTop="1dp"/>
+    <TextView
+        android:id="@+id/tv_oil"
+        style="@style/tv_ifragment"
+        android:text="油价"
+        android:layout_marginTop="1dp"/>
+
+    <TextView
+        style="@style/tv_ifragment"
+        android:text="设置"
+        android:layout_marginTop="10dp"/>
+</LinearLayout>

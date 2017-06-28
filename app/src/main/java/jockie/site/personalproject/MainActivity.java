@@ -1,6 +1,5 @@
 package jockie.site.personalproject;
 
-import android.graphics.drawable.Drawable;
 import android.support.v4.app.Fragment;
 import android.view.View;
 import android.widget.ImageView;
@@ -13,8 +12,11 @@ import butterknife.Bind;
 import butterknife.OnClick;
 import jockie.site.personalproject.base.BaseActivity;
 import jockie.site.personalproject.base.BasePresenter;
-import jockie.site.personalproject.fragment.DateFragment;
-import jockie.site.personalproject.fragment.SettingFragment;
+import jockie.site.personalproject.fragment.EFragment;
+import jockie.site.personalproject.fragment.IFragment;
+import jockie.site.personalproject.fragment.LFragment;
+import jockie.site.personalproject.fragment.MFragment;
+import jockie.site.personalproject.fragment.YFragment;
 
 /**
  *                             _ooOoo_
@@ -80,7 +82,6 @@ public class MainActivity extends BaseActivity{
         tvLists.add(tvIndex);
         tvLists.add(tvActivi);
         tvLists.add(tvInfo);
-
     }
 
     @Override
@@ -109,15 +110,11 @@ public class MainActivity extends BaseActivity{
         }
     }
 
-    int[] selectedBg = {R.mipmap.ic_launcher,R.mipmap.ic_launcher,R.mipmap.ic_launcher,R.mipmap.ic_launcher,R.mipmap.ic_launcher};
-    int[] normalBg = {R.mipmap.ic_launcher,R.mipmap.ic_launcher,R.mipmap.ic_launcher,R.mipmap.ic_launcher,R.mipmap.ic_launcher};
-
     private void setImageViewBg(int position) {
         for (int i = 0; i < tvLists.size(); i++) {
-            setTvDrawableTop(tvLists.get(i),R.color.textGray,normalBg[i]);
+            tvLists.get(i).setBackgroundResource(i == position? R.drawable.heart_burn : R.drawable.heart_blue);
+            tvLists.get(i).setTextColor(getResources().getColor(i == position ? R.color.bg_color : R.color.textColor));
         }
-        setTvDrawableTop(tvLists.get(position),R.color.textColor,selectedBg[position]);
-
         beforeSelectedPosition = currentSelectedPosition;
         currentSelectedPosition = position;
         dealWithFragment();
@@ -125,18 +122,11 @@ public class MainActivity extends BaseActivity{
 
     @Override
     protected List<Fragment> getFragment() {
-        mFragment.add(new DateFragment());
-        mFragment.add(new SettingFragment());
-        mFragment.add(new SettingFragment());
-        mFragment.add(new SettingFragment());
-        mFragment.add(new SettingFragment());
+        mFragment.add(new EFragment());
+        mFragment.add(new MFragment());
+        mFragment.add(new IFragment());
+        mFragment.add(new LFragment());
+        mFragment.add(new YFragment());
         return mFragment;
-    }
-
-    public void setTvDrawableTop(TextView targetTv, int tvTargetColor, int drawableResId) {
-        Drawable drawable = getResources().getDrawable(drawableResId);
-        drawable.setBounds(0, 0, drawable.getMinimumWidth(), drawable.getMinimumHeight());
-        targetTv.setCompoundDrawables(null, drawable, null, null);
-        targetTv.setTextColor(getResources().getColor(tvTargetColor));
     }
 }

@@ -5,8 +5,8 @@
     <color name="colorPrimaryLight">#baddfa</color>
     <color name="colorAccent">#009587</color>
     <color name="text">#fefefe</color>
-    <color name="textColor">#212121</color>
+    <color name="textColor">#272727</color>
     <color name="textGray">#757575</color>
-    <color name="divideColor">#bdbdbd</color>
-    <color name="bg_color">#f9f9f9</color>
+    <color name="divideColor">#ebebeb</color>
+    <color name="bg_color">#ffffff</color>
 </resources>

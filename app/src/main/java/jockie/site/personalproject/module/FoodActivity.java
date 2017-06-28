@@ -1,4 +1,4 @@
-package jockie.site.personalproject;
+package jockie.site.personalproject.module;
 
 import android.content.Intent;
 import android.support.v7.widget.LinearLayoutManager;
@@ -11,6 +11,7 @@ import com.xiaosu.pulllayout.SimplePullLayout;
 import com.xiaosu.pulllayout.base.BasePullLayout;
 
 import butterknife.Bind;
+import jockie.site.personalproject.R;
 import jockie.site.personalproject.adapter.FoodCategorAdapter;
 import jockie.site.personalproject.base.BaseActivity;
 import jockie.site.personalproject.base.BaseApp;

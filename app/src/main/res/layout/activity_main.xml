@@ -15,11 +15,14 @@
         android:layout_height="0dp"
         android:layout_weight="1"/>
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/divideColor"/>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="50dp"
         android:orientation="horizontal">
-
         <FrameLayout
             android:id="@+id/fl_msg"
             android:layout_width="0dp"
@@ -28,7 +31,7 @@
             <TextView
                 android:id="@+id/tv_msg"
                 style="@style/tv_main_bottom"
-                android:text="随心约" />
+                android:text="E" />
         </FrameLayout>
 
         <FrameLayout
@@ -39,8 +42,7 @@
             <TextView
                 android:id="@+id/tv_online"
                 style="@style/tv_main_bottom"
-                android:text="在线"
-                 />
+                android:text="M" />
         </FrameLayout>
 
         <FrameLayout
@@ -51,8 +53,9 @@
             <TextView
                 android:id="@+id/tv_index"
                 style="@style/tv_main_bottom"
-                android:textColor="@color/textColor"
-                android:text="约玩" />
+                android:textColor="@color/bg_color"
+                android:text="I"
+                android:background="@drawable/heart_burn" />
         </FrameLayout>
 
 
@@ -64,7 +67,7 @@
             <TextView
                 android:id="@+id/tv_activi"
                 style="@style/tv_main_bottom"
-                android:text="动态"
+                android:text="L"
                  />
         </FrameLayout>
 
@@ -80,7 +83,7 @@
                 <TextView
                     android:id="@+id/tv_info"
                     style="@style/tv_main_bottom"
-                    android:text="我"
+                    android:text="Y"
                     android:layout_centerInParent="true"
                     />
             </RelativeLayout>

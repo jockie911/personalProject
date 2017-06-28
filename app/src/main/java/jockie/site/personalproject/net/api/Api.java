@@ -5,6 +5,8 @@ import java.util.Map;
 
 import jockie.site.personalproject.bean.ALlBean;
 import jockie.site.personalproject.bean.CategoryBean;
+import jockie.site.personalproject.bean.DreamBean;
+import jockie.site.personalproject.bean.OilBean;
 import retrofit2.http.Field;
 import retrofit2.http.FieldMap;
 import retrofit2.http.FormUrlEncoded;
@@ -45,4 +47,9 @@ public interface Api<T> {
                                                             @Query("page") String page,
                                                             @Query("size") String size);
 
+    @GET
+    Observable<DreamBean> getDreamDetail(@Url String url,@Query("key") String key, @Query("name") String name);
+
+    @GET
+    Observable<OilBean> getOil(@Url String url,@Query("key") String smssdkKey);
 }

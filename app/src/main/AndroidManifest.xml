@@ -22,8 +22,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FoodActivity" />
-        <activity android:name=".FoodDetailActivity"></activity>
+        <activity android:name=".module.FoodActivity" />
+        <activity android:name=".module.FoodDetailActivity" />
+        <activity android:name=".module.DreamActivity" />
+        <activity android:name=".module.OilActivity"></activity>
     </application>
 
 </manifest>
